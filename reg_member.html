@@ -2,25 +2,45 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
     <script src="reg_member.js"></script>
 </head>
 <body>
-    <div>
-        <form action="#" method="GET" id="form">
-            <input type="text" id="id" minlength="4" maxlength="12" required placeholder="id(4자리이상,12자리이하)">
-            <br>
-            <input type="password" id="pw" minlength="4" maxlength="12" required placeholder="pw(4자리이상,12자리이하)">
-            <br>
-            <input type="password" id="pw_re" minlength="4" maxlength="12" required placeholder="pw재입력">
-            <br>
-            <input type="text" id="user_name" minlength="4" maxlength="12" required placeholder="이름">
-            <br>
-            <input type="email" id="email" minlength="4" maxlength="12" required placeholder="이메일">
-            <br>
-            <label for="birth_y">생년월일</label>
-            <input type="number" id="birth_y" value="1979" required>
-            <select id="birth_m">
+    <div id="content">
+        <div id="login_box" class="register-box">
+            <div class="logo">
+                <h1>👤 회원가입</h1>
+                <p class="subtitle">새로운 계정을 만들어보세요</p>
+            </div>
+            <form action="#" method="GET" id="form">
+                <div class="input-group">
+                    <label for="id">아이디</label>
+                    <input type="text" id="id" minlength="4" maxlength="12" required placeholder="4~12자 입력">
+                </div>
+                <div class="input-group">
+                    <label for="pw">비밀번호</label>
+                    <input type="password" id="pw" minlength="4" maxlength="12" required placeholder="4~12자 입력">
+                </div>
+                <div class="input-group">
+                    <label for="pw_re">비밀번호 확인</label>
+                    <input type="password" id="pw_re" minlength="4" maxlength="12" required placeholder="비밀번호 재입력">
+                </div>
+                <div class="input-group">
+                    <label for="user_name">이름</label>
+                    <input type="text" id="user_name" minlength="2" maxlength="12" required placeholder="이름 입력">
+                </div>
+                <div class="input-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" required placeholder="example@email.com">
+                </div>
+                <div class="input-group">
+                    <label for="birth_y">생년월일</label>
+                    <div class="birth-group">
+                        <input type="number" id="birth_y" value="1990" required min="1900" max="2026" placeholder="년">
+                        <select id="birth_m">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -66,20 +86,37 @@
                 <option value="29">29</option>
                 <option value="30">30</option>
                 <option value="31">31</option>
-            </select>
-            <h4>성별</h4>
-            <input type="radio" name="sex" value="M">남성
-            <input type="radio" name="sex" value="G" checked>여성
-            <br>
-            <label for="tel1">전화번호</label>
-            <!-- <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" />             -->
-            <input type="tel" id="tel_1" minlength="3" maxlength="3" value="010" required> -
-            <input type="tel" id="tel_2" minlength="4" maxlength="4" required> -
-            <input type="tel" id="tel_3" minlength="4" maxlength="4" required pattern="[0-9]{4}">
-            <br><br>
-            <input id="submit" type="submit" value="회원가입" onclick="check();">
-            <input type="reset" value="다지우기">
-        </form>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>성별</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="sex" value="M">
+                            <span>남성</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="sex" value="G" checked>
+                            <span>여성</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="tel_1">전화번호</label>
+                    <div class="tel-group">
+                        <input type="tel" id="tel_1" minlength="3" maxlength="3" value="010" required>
+                        <span>-</span>
+                        <input type="tel" id="tel_2" minlength="4" maxlength="4" required placeholder="0000">
+                        <span>-</span>
+                        <input type="tel" id="tel_3" minlength="4" maxlength="4" required pattern="[0-9]{4}" placeholder="0000">
+                    </div>
+                </div>
+                <button id="submit" type="submit" class="btn btn-primary" onclick="check();">회원가입 완료</button>
+                <button type="reset" class="btn btn-secondary">다시 작성</button>
+                <a href="index.html" class="btn btn-link">로그인으로 돌아가기</a>
+            </form>
+        </div>
     </div>
 </body>
 </html>

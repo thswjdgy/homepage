@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - 로그인</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="index.css">
     <script src="common.js"></script>
@@ -13,12 +14,21 @@
 <body>
     <div id="content">
         <div id="login_box">
-            <input id="i" placeholder="아이디">
-            <br><br>
-            <input id="p" placeholder="암호"><br>
-            <br>
-            <input id="btn" type="button" value="로그인" onclick="login();">
-            <a href="reg_member.html"><input id="btn" type="button" value="회원가입"></a>
+            <div class="logo">
+                <h1>🌟 Welcome</h1>
+                <p class="subtitle">로그인하여 시작하세요</p>
+            </div>
+            <div class="input-group">
+                <label for="i">아이디</label>
+                <input id="i" type="text" placeholder="아이디를 입력하세요">
+            </div>
+            <div class="input-group">
+                <label for="p">비밀번호</label>
+                <input id="p" type="password" placeholder="비밀번호를 입력하세요">
+            </div>
+            <button id="login-btn" class="btn btn-primary" onclick="login();">로그인</button>
+            <div class="divider">또는</div>
+            <a href="reg_member.html" class="btn btn-secondary">회원가입</a>
         </div>
     </div>
 </body>
